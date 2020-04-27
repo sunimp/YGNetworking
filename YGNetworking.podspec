@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YGNetworking'
-  s.version          = '4.0.1'
+  s.version          = '1.0.0'
   s.summary          = '基于 AFNetworking 封装的一个网络库.'
 
 # This description is used to generate tags and improve search results.

@@ -14,15 +14,23 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - YGNetworking (4.0.1):
+  - Masonry (1.1.0)
+  - SDWebImage (5.7.3):
+    - SDWebImage/Core (= 5.7.3)
+  - SDWebImage/Core (5.7.3)
+  - YGNetworking (1.0.0):
     - AFNetworking (~> 4.0)
 
 DEPENDENCIES:
+  - Masonry
+  - SDWebImage
   - YGNetworking (from `../`)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Masonry
+    - SDWebImage
 
 EXTERNAL SOURCES:
   YGNetworking:
@@ -30,8 +38,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  YGNetworking: c3523f7fc6123612c6a1d4815dab5a45630f0817
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
+  YGNetworking: ab8f1998b355f249aa210d7d298cb4abaf889d85
 
-PODFILE CHECKSUM: 4f688252b86bc24b88744c05e7a6b96e507a7e4a
+PODFILE CHECKSUM: a3b26971127bb341a1be7dc19618c3e790aa8dd7
 
 COCOAPODS: 1.9.1

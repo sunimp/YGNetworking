@@ -1,9 +1,12 @@
 use_frameworks!
+inhibit_all_warnings!
 
 platform :ios, '9.0'
 
 target 'YGNetworking_Example' do
   pod 'YGNetworking', :path => '../'
+  pod 'Masonry'
+  pod 'SDWebImage'
 
   target 'YGNetworking_Tests' do
     inherit! :search_paths

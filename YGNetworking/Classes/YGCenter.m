@@ -10,6 +10,10 @@
 #import "YGRequest.h"
 #import "YGEngine.h"
 
+#ifndef YGLog(...)
+    #define YGLog(...) printf("%s", [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#endif
+
 @interface YGCenter () {
     dispatch_semaphore_t _lock;
 }
@@ -513,9 +517,9 @@
     
     if (self.consoleLog) {
         if (request.requestType == kYGRequestDownload) {
-            NSLog(@"\n============ [YGRequest Info] ============\nrequest download url: %@\nrequest save path: %@ \nrequest headers: \n%@ \nrequest parameters: \n%@ \n==========================================\n", request.url, request.downloadSavePath, request.headers, request.parameters);
+            YGLog(@"\n============ [YGRequest Info] ============\nrequest download url: %@\nrequest save path: %@ \nrequest headers: \n%@ \nrequest parameters: \n%@ \n==========================================\n", request.url, request.downloadSavePath, request.headers, request.parameters);
         } else {
-            NSLog(@"\n============ [YGRequest Info] ============\nrequest url: %@ \nrequest headers: \n%@ \nrequest parameters: \n%@ \n==========================================\n", request.url, request.headers, request.parameters);
+            YGLog(@"\n============ [YGRequest Info] ============\nrequest url: %@ \nrequest headers: \n%@ \nrequest parameters: \n%@ \n==========================================\n", request.url, request.headers, request.parameters);
         }
     }
     
@@ -545,12 +549,12 @@
     
     if (self.consoleLog) {
         if (request.requestType == kYGRequestDownload) {
-            NSLog(@"\n============ [YGResponse Data] ===========\nrequest download url: %@\nresponse data: %@\n==========================================\n", request.url, responseObject);
+            YGLog(@"\n============ [YGResponse Data] ===========\nrequest download url: %@\nresponse data: %@\n==========================================\n", request.url, responseObject);
         } else {
             if (request.responseSerializerType == kYGResponseSerializerRAW) {
-                NSLog(@"\n============ [YGResponse Data] ===========\nrequest url: %@ \nresponse data: \n%@\n==========================================\n", request.url, [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
+                YGLog(@"\n============ [YGResponse Data] ===========\nrequest url: %@ \nresponse data: \n%@\n==========================================\n", request.url, [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
             } else {
-                NSLog(@"\n============ [YGResponse Data] ===========\nrequest url: %@ \nresponse data: \n%@\n==========================================\n", request.url, responseObject);
+                YGLog(@"\n============ [YGResponse Data] ===========\nrequest url: %@ \nresponse data: \n%@\n==========================================\n", request.url, responseObject);
             }
         }
     }
@@ -576,7 +580,7 @@
 - (void)yg_failureWithError:(NSError *)error forRequest:(YGRequest *)request {
     
     if (self.consoleLog) {
-        NSLog(@"\n=========== [YGResponse Error] ===========\nrequest url: %@ \nerror info: \n%@\n==========================================\n", request.url, error);
+        YGLog(@"\n=========== [YGResponse Error] ===========\nrequest url: %@ \nerror info: \n%@\n==========================================\n", request.url, error);
     }
     
     YG_NETWORKING_SAFE_BLOCK(self.errorProcessHandler, request, &error);

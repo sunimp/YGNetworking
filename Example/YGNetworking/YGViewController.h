@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface YGViewController : UIViewController
+@interface YGViewController : UITableViewController
 
 @end
