@@ -20,9 +20,15 @@ it, simply add the following line to your Podfile:
 pod 'YGNetworking'
 ```
 
+## Todo
+
+> add Example for pod
+> add cache layer
+
+
 ## Author
 
-oneofai, guang.yang@qingclass.com
+oneofai, holaux@gmail.com
 
 ## License
 

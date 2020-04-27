@@ -7,6 +7,7 @@
 //
 
 #import "YGViewController.h"
+#import <YGNetworking/YGNetworking.h>
 
 @interface YGViewController ()
 
