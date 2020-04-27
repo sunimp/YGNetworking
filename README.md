@@ -22,7 +22,6 @@ pod 'YGNetworking'
 
 ## Todo
 
-- add Example for pod
 - add cache layer
 
 
