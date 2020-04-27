@@ -22,8 +22,8 @@ pod 'YGNetworking'
 
 ## Todo
 
-> add Example for pod
-> add cache layer
+- add Example for pod
+- add cache layer
 
 
 ## Author
